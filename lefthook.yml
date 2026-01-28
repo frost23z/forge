@@ -1,0 +1,13 @@
+output:
+  - meta
+  - summary
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format
+      run: npm run format
+      stage_fixed: true
+
+    - name: lint
+      run: npm run lint
