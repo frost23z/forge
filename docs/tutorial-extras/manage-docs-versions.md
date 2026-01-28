@@ -29,18 +29,18 @@ Modify the `docusaurus.config.js` file:
 
 ```js title="docusaurus.config.js"
 export default {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
+    themeConfig: {
+        navbar: {
+            items: [
+                // highlight-start
+                {
+                    type: "docsVersionDropdown",
+                },
+                // highlight-end
+            ],
         },
-        // highlight-end
-      ],
     },
-  },
-};
+}
 ```
 
 The docs version dropdown appears in your navbar:
