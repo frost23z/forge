@@ -1,35 +1,24 @@
 import type * as Preset from "@docusaurus/preset-classic"
 import type { Config } from "@docusaurus/types"
+import { DOCUSAURUS_VERSION } from "@docusaurus/utils"
 import { themes as prismThemes } from "prism-react-renderer"
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
-    title: "My Site",
-    tagline: "Dinosaurs are cool",
+    title: "Forge",
+    tagline: "Learn. Build. Discover.",
     favicon: "img/favicon.ico",
 
-    // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
         v4: true, // Improve compatibility with the upcoming Docusaurus v4
     },
 
-    // Set the production url of your site here
-    url: "https://your-docusaurus-site.example.com",
-    // Set the /<baseUrl>/ pathname under which your site is served
-    // For GitHub pages deployment, it is often '/<projectName>/'
+    url: "https://forge.zayedbinhasan.me",
     baseUrl: "/",
-
-    // GitHub pages deployment config.
-    // If you aren't using GitHub pages, you don't need these.
-    organizationName: "facebook", // Usually your GitHub org/user name.
-    projectName: "docusaurus", // Usually your repo name.
+    organizationName: "frost23z",
+    projectName: "forge",
 
     onBrokenLinks: "throw",
 
-    // Even if you don't use internationalization, you can use this field to set
-    // useful metadata like html lang. For example, if your site is Chinese, you
-    // may want to replace "en" with "zh-Hans".
     i18n: {
         defaultLocale: "en",
         locales: ["en"],
@@ -41,10 +30,7 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+                    editUrl: "https://github.com/frost23z/forge/tree/main/",
                 },
                 blog: {
                     showReadingTime: true,
@@ -52,11 +38,7 @@ const config: Config = {
                         type: ["rss", "atom"],
                         xslt: true,
                     },
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-                    // Useful options to enforce blogging best practices
+                    editUrl: "https://github.com/frost23z/forge/tree/main/",
                     onInlineTags: "warn",
                     onInlineAuthors: "warn",
                     onUntruncatedBlogPosts: "warn",
@@ -68,16 +50,26 @@ const config: Config = {
         ],
     ],
 
+    markdown: {
+        mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid"],
+
     themeConfig: {
-        // Replace with your project's social card
-        image: "img/docusaurus-social-card.jpg",
         colorMode: {
             respectPrefersColorScheme: true,
         },
+        image: "img/social-card.png",
+        docs: {
+            sidebar: {
+                hideable: true,
+                autoCollapseCategories: true,
+            },
+        },
         navbar: {
-            title: "My Site",
+            title: "Forge",
             logo: {
-                alt: "My Site Logo",
+                alt: "Forge Logo",
                 src: "img/logo.svg",
             },
             items: [
@@ -89,10 +81,55 @@ const config: Config = {
                 },
                 { to: "/blog", label: "Blog", position: "left" },
                 {
-                    href: "https://github.com/facebook/docusaurus",
+                    href: "https://github.com/frost23z/forge",
                     label: "GitHub",
                     position: "right",
                 },
+            ],
+        },
+        prism: {
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
+            // Add languages for syntax highlighting in code blocks
+            // Already bundled: cpp, go, graphql, js-extras, json, jsx, kotlin, markdown, markup, objectivec, python, reason, rust, swift, tsx, yaml
+            // Check if default bundled got updated: https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L10-L25
+            // Find available languages: ls node_modules/prismjs/components/ | grep "^prism-" | sed 's/prism-//' | sed 's/\.js$//' | sed 's/\.min$//' | sort -u
+            additionalLanguages: [
+                "bash",
+                "c",
+                "csharp",
+                "css-extras",
+                "csv",
+                "dart",
+                "diff",
+                "docker",
+                "editorconfig",
+                "git",
+                "gradle",
+                "graphql",
+                "http",
+                "ini",
+                "java",
+                "javadoc",
+                "json5",
+                "latex",
+                "log",
+                "lua",
+                "makefile",
+                "nginx",
+                "php-extras",
+                "plant-uml",
+                "powershell",
+                "properties",
+                "protobuf",
+                "regex",
+                "ruby",
+                "sass",
+                "scss",
+                "sql",
+                "toml",
+                "typescript",
+                "wasm",
             ],
         },
         footer: {
@@ -112,15 +149,15 @@ const config: Config = {
                     items: [
                         {
                             label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                            to: "https://stackoverflow.com/questions/tagged/docusaurus",
                         },
                         {
                             label: "Discord",
-                            href: "https://discordapp.com/invite/docusaurus",
+                            to: "https://discordapp.com/invite/docusaurus",
                         },
                         {
                             label: "X",
-                            href: "https://x.com/docusaurus",
+                            to: "https://x.com/docusaurus",
                         },
                     ],
                 },
@@ -128,21 +165,21 @@ const config: Config = {
                     title: "More",
                     items: [
                         {
-                            label: "Blog",
-                            to: "/blog",
+                            label: "Docusaurus Blog",
+                            to: "https://docusaurus.io/blog",
                         },
                         {
-                            label: "GitHub",
-                            href: "https://github.com/facebook/docusaurus",
+                            label: "Docusaurus GitHub",
+                            to: "https://github.com/facebook/docusaurus",
+                        },
+                        {
+                            label: "Community GitHub",
+                            to: "https://github.com/DocusaurusCommunity",
                         },
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-        },
-        prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+            copyright: `Copyright © ${new Date().getFullYear()} Shaiekh Zayed Bin Hasan. Built with <a href="https://docusaurus.io">Docusaurus v${DOCUSAURUS_VERSION}</a>.`,
         },
     } satisfies Preset.ThemeConfig,
 }
