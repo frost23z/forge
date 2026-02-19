@@ -1,6 +1,7 @@
 import type * as Preset from "@docusaurus/preset-classic"
 import type { Config } from "@docusaurus/types"
 import { DOCUSAURUS_VERSION } from "@docusaurus/utils"
+import "dotenv/config"
 import { themes as prismThemes } from "prism-react-renderer"
 
 const config: Config = {
@@ -67,6 +68,7 @@ const config: Config = {
             },
         },
         navbar: {
+            hideOnScroll: true,
             title: "Forge",
             logo: {
                 alt: "Forge Logo",
@@ -80,12 +82,21 @@ const config: Config = {
                     label: "Tutorial",
                 },
                 { to: "/blog", label: "Blog", position: "left" },
+                // Right
                 {
                     href: "https://github.com/frost23z/forge",
-                    label: "GitHub",
                     position: "right",
+                    className: "header-github-link",
+                    "aria-label": "GitHub repository",
                 },
             ],
+        },
+        algolia: {
+            appId: process.env.ALGOLIA_APP_ID,
+            apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+            indexName: process.env.ALGOLIA_INDEX_NAME,
+            contextualSearch: true,
+            searchPagePath: "search",
         },
         prism: {
             theme: prismThemes.github,

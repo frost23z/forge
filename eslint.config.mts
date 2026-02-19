@@ -49,6 +49,16 @@ export default defineConfig([
             "markdown/no-missing-label-refs": "off", // Allows missing label refs in blog posts
         },
     },
-    { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
+    {
+        files: ["**/*.css"],
+        plugins: { css },
+        language: "css/css",
+        extends: ["css/recommended"],
+        rules: {
+            "css/no-invalid-properties": "off", // Docusaurus uses custom CSS variables
+            "css/no-important": "off",
+            "css/use-baseline": "off",
+        },
+    },
     eslintConfigPrettier,
 ])
