@@ -1,19 +1,44 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+linux:
+  label: Linux
+  permalink: /linux
+  description: Linux system administration, troubleshooting, and configuration
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+ubuntu:
+  label: Ubuntu
+  permalink: /ubuntu
+  description: Ubuntu-specific guides and fixes
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+troubleshooting:
+  label: Troubleshooting
+  permalink: /troubleshooting
+  description: Problem-solving guides and debugging tips
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+system-repair:
+  label: System Repair
+  permalink: /system-repair
+  description: Fixing broken systems and recovering data
+
+chroot:
+  label: Chroot
+  permalink: /chroot
+  description: Using chroot for system repair and maintenance
+
+java:
+  label: Java
+  permalink: /java
+  description: Java programming, frameworks, and best practices
+
+web-dev:
+  label: Web Development
+  permalink: /web-dev
+  description: Web development tutorials and discoveries
+
+configuration:
+  label: Configuration
+  permalink: /configuration
+  description: System and software configuration guides
+
+experiments:
+  label: Experiments
+  permalink: /experiments
+  description: Things I try, test, and explore
